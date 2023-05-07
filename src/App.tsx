@@ -1,6 +1,7 @@
 import { useState } from "react";
 import Alert from "./components/Alert";
 import Button from "./components/Button";
+import ListGroup from "./components/ListGroup";
 
 function App() {
     const [alertVisible, setAlertVisible] = useState(false);
@@ -12,11 +13,21 @@ function App() {
                         setAlertVisible(false);
                     }}
                 >
-                    <p>Hello World!</p>
-                    <hr />
-                    <p>
-                        My name is <b>Aditya Raj</b>
-                    </p>
+                    <ListGroup
+                        items={[
+                            "Bombay",
+                            "Delhi",
+                            "Kanpur",
+                            "Madras",
+                            "Kharagpur",
+                            "Roorkie",
+                            "Guwahati",
+                        ]}
+                        heading="List of good IITs"
+                        onSelectItem={(item) => {
+                            console.log(item);
+                        }}
+                    ></ListGroup>
                 </Alert>
             )}
             <Button
@@ -24,7 +35,7 @@ function App() {
                     setAlertVisible(true);
                 }}
             >
-                Click to see Alert
+                Click to see List of IITs
             </Button>
         </div>
     );
