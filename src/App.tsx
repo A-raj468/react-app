@@ -2,12 +2,13 @@ import { useState } from "react";
 import Alert from "./components/Alert";
 import Button from "./components/Button";
 import ListGroup from "./components/ListGroup";
+import TODO from "./components/TODO";
 
 function App() {
     const [alertVisible, setAlertVisible] = useState(false);
     return (
         <div>
-            {alertVisible && (
+            {/* {alertVisible && (
                 <Alert
                     onClose={() => {
                         setAlertVisible(false);
@@ -37,6 +38,8 @@ function App() {
             >
                 Click to see List of IITs
             </Button>
+            <hr /> */}
+            <TODO></TODO>
         </div>
     );
 }
